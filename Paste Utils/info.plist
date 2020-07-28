@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>zethrae.us.alfred.clipboard</string>
+	<string>zethrae.us.alfred.utils.paste</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -28,19 +28,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>BE971434-2689-43CB-BDA8-31419A3A4599</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>5BB8C5E1-2565-4436-A9A4-741547346D69</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>4ADFDABB-955B-44E9-8E79-D20DCA078757</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -130,7 +117,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>5BB8C5E1-2565-4436-A9A4-741547346D69</string>
+				<string>4ADFDABB-955B-44E9-8E79-D20DCA078757</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -169,11 +156,11 @@
 	<key>createdby</key>
 	<string>Adam Zethraeus</string>
 	<key>description</key>
-	<string>Useful clipboard actions</string>
+	<string>Useful paste/clipboard actions</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Clipboard Utils</string>
+	<string>Paste Utils</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -203,40 +190,20 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>keyword</key>
 				<string>paste png</string>
 				<key>subtext</key>
-				<string>Image data required</string>
+				<string>arg: optional Int index to image data in clipboard.</string>
 				<key>text</key>
-				<string>Paste the top clipboard entry as .png file to desktop</string>
+				<string>Paste a clipboard entry as .png file to desktop</string>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>EA00B261-6265-401D-AA4E-BE842432045A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>datetime</key>
-					<string>{date:yyyy-MM-dd_HH-mm-ss}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>5BB8C5E1-2565-4436-A9A4-741547346D69</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -370,6 +337,23 @@
 			<key>config</key>
 			<dict>
 				<key>argument</key>
+				<string>{var:pasteval}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>50A92E20-CBF5-4527-8369-BC74F40C75C5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
 				<string>{query}</string>
 				<key>passthroughargument</key>
 				<false/>
@@ -383,23 +367,6 @@
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>5D1BBA88-AC16-42C9-9117-42702E171466</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{var:pasteval}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>50A92E20-CBF5-4527-8369-BC74F40C75C5</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -489,7 +456,9 @@ end run</string>
 
 paste txt {x: Int = 0} - paste clipboard entry x as .txt file to desktop.
 
-paste type {x: Int = 0} - simulate typing clipboard entry x into the active window.</string>
+paste type {x: Int = 0} - simulate typing clipboard entry x into the active window.
+
+(Paste Icon by https://www.flaticon.com/authors/smashicons)</string>
 	<key>uidata</key>
 	<dict>
 		<key>1B6BE66B-9E51-4C7F-A9C8-7EC9A9D9D3DB</key>
@@ -506,9 +475,9 @@ paste type {x: Int = 0} - simulate typing clipboard entry x into the active wind
 			<key>note</key>
 			<string>paste image</string>
 			<key>xpos</key>
-			<integer>600</integer>
+			<integer>360</integer>
 			<key>ypos</key>
-			<integer>65</integer>
+			<integer>90</integer>
 		</dict>
 		<key>50A92E20-CBF5-4527-8369-BC74F40C75C5</key>
 		<dict>
@@ -516,13 +485,6 @@ paste type {x: Int = 0} - simulate typing clipboard entry x into the active wind
 			<integer>700</integer>
 			<key>ypos</key>
 			<integer>430</integer>
-		</dict>
-		<key>5BB8C5E1-2565-4436-A9A4-741547346D69</key>
-		<dict>
-			<key>xpos</key>
-			<integer>315</integer>
-			<key>ypos</key>
-			<integer>95</integer>
 		</dict>
 		<key>5D1BBA88-AC16-42C9-9117-42702E171466</key>
 		<dict>
@@ -615,8 +577,8 @@ paste type {x: Int = 0} - simulate typing clipboard entry x into the active wind
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
-	<string>https://zethrae.us</string>
+	<string>https://github.com/adam-zethraeus/alfred_paste_utils</string>
 </dict>
 </plist>
