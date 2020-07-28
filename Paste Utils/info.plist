@@ -8,6 +8,19 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>073F1126-19C9-46F1-A704-6E2D643BAFB4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4ADFDABB-955B-44E9-8E79-D20DCA078757</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>1B6BE66B-9E51-4C7F-A9C8-7EC9A9D9D3DB</key>
 		<array>
 			<dict>
@@ -117,7 +130,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>4ADFDABB-955B-44E9-8E79-D20DCA078757</string>
+				<string>073F1126-19C9-46F1-A704-6E2D643BAFB4</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -171,7 +184,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./pngpaste ~/Desktop/clipboard_$datetime.png</string>
+				<string>./pngpaste/pngpaste ~/Desktop/clipboard_$datetime.png</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -204,6 +217,26 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>EA00B261-6265-401D-AA4E-BE842432045A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>datetime</key>
+					<string>{date:yyyy-MM-dd_HH-mm-ss}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>073F1126-19C9-46F1-A704-6E2D643BAFB4</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -461,6 +494,13 @@ paste type {x: Int = 0} - simulate typing clipboard entry x into the active wind
 (Paste Icon by https://www.flaticon.com/authors/smashicons)</string>
 	<key>uidata</key>
 	<dict>
+		<key>073F1126-19C9-46F1-A704-6E2D643BAFB4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>335</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
 		<key>1B6BE66B-9E51-4C7F-A9C8-7EC9A9D9D3DB</key>
 		<dict>
 			<key>colorindex</key>
@@ -475,7 +515,7 @@ paste type {x: Int = 0} - simulate typing clipboard entry x into the active wind
 			<key>note</key>
 			<string>paste image</string>
 			<key>xpos</key>
-			<integer>360</integer>
+			<integer>460</integer>
 			<key>ypos</key>
 			<integer>90</integer>
 		</dict>
@@ -577,7 +617,7 @@ paste type {x: Int = 0} - simulate typing clipboard entry x into the active wind
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/adam-zethraeus/alfred_paste_utils</string>
 </dict>
